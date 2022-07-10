@@ -25,5 +25,10 @@ const theme = {
     fontWeight: {
         normal: '400',
         bold: '700'
+    },
+    buttons: {
+        small: 100,
+        medium: 150,
+        big: 150
     }
 }

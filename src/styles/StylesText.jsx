@@ -5,7 +5,7 @@ import theme from '../theme'
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 18,
+        fontSize: 20,
         color: 'black'
     },
     red: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 })
 
 export default function StyledText ({children, text, red, green, blue, small, medium, big}) {
-    /*const textStyles = [
+    const textStyles = [
         styles.text,
         red && styles.red,
         green && styles.green,
@@ -37,9 +37,9 @@ export default function StyledText ({children, text, red, green, blue, small, me
         small && styles.small,
         medium && styles.medium,
         big && styles.big
-    ]*/
+    ]
 
     return(
-        <Text>{children}</Text>
+        <Text style={styles.text}>{children}</Text>
     )
 }
