@@ -41,6 +41,6 @@ export default function StyledText ({children, text, red, green, blue, small, me
     ]
 
     return(
-        <Text style={styles.textStyles}>{children}</Text>
+        <Text style={styles.text}>{children}</Text>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, TouchableWithoutFeedback, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TouchableWithoutFeedback, ScrollView } from 'react-native'
 import { Link, useLocation } from 'react-router-native'
 import { Dimensions } from 'react-native';
 
@@ -12,9 +12,9 @@ const windowHeight = Dimensions.get('window').height;
 const AppBarTab = ({active, children, to}) => {
   return (
     <Link style = {styles.tab} to={to}>
-      <StyledText>
+      <Text style = {styles.text}>
          {children}
-      </StyledText>
+      </Text>
     </Link>
   )
 }
@@ -22,12 +22,9 @@ const AppBarTab = ({active, children, to}) => {
 const AppBar = (props) => { 
     return(
       <View style = {styles.container}>
-        <View style = {styles.logoContainer}>
-          <StyledText>RGB device</StyledText>
-        </View>
         <View style = {styles.navLinksContainer}>
-            <AppBarTab  active to='/measures'>Measures</AppBarTab>
-            <AppBarTab  active to='/history'>History</AppBarTab>
+            <AppBarTab  active to='/measures'>MEASURES</AppBarTab>
+            <AppBarTab  active to='/history'>HISTORY</AppBarTab>
         </View>
       </View>
     )
@@ -39,33 +36,35 @@ const styles = StyleSheet.create({
     justifyContent: 'center',  
     alignItems: 'center',
     width: windowWidth,
-    height: 100,
+    height: 40,
     backgroundColor: 'white',
-  },
-  logoContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',  
-    alignItems: 'center',
-    width: windowWidth,
-    height: 45,
-    backgroundColor: 'white',
+    paddingLeft: 25,
+    paddingRight: 25
   },
   navLinksContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',  
     alignItems: 'flex-start',
-    height: 45,
-    backgroundColor: 'white',
-    paddingLeft: 25
+    width: windowWidth - 50,
+    height: 40,
+    backgroundColor: '#ECECEC',
+    borderRadius: 10,
+
+    marginBottom: 5
   },
   tab: {
     flexDirection: 'column',
     justifyContent: 'center',  
     alignItems: 'center',
-    width: windowWidth/2 - 50,
-    height: 45,
-    backgroundColor: '#eeeeee',
-    
+    width: (windowWidth - 70)/2,
+    height: 40,
+    backgroundColor: '#ECECEC',
+    borderRadius: 5
+  },
+  text: {
+    fontSize: 18,
+    color: 'white',
+    fontWeight: '500'
   }
 });
 

@@ -13,18 +13,16 @@ const Measures = () => {
 
     const [deviceState, setDeviceState] = useState('Decive');
 
-
-
     const instructions = 'Please follow the instructions below:\n - Device: connect device\n - Calibration: device ready to calibration\n - Measure: device ready to measure '
-    const device = 'Connect the RGB Decive providing wifi access with your mobile phone:\n - SSID: rgb-device\n - Password: 123456789';
+    const device = 'Connect the RGB Decive providing wifi access with your mobile phone. Set this wifi credentials:\n - Name: rgb-device\n - Password: 123456789';
     const calibrate = 'Select the wells you will use by cliking the cicles to calibrate the device and then press "Start Calibration" button';
     const measure = 'Select the wells with samples by clicking the circles and press the "Start Measures" button.';
 
     handlePress = (name) => {
-        if (name == 'Instructions') Alert.alert('Device', instructions);
-        if (name == 'Device') Alert.alert('Calibration', device);
-        if (name == 'Calibration') Alert.alert('Measure', calibrate); 
-        if (name == 'Measure') Alert.alert('Intructions', measure); 
+        if (name == 'Instructions') Alert.alert('Instructions', instructions);
+        if (name == 'Device') Alert.alert('Device', device);
+        if (name == 'Calibration') Alert.alert('Calibration', calibrate); 
+        if (name == 'Measure') Alert.alert('Measure', measure); 
     }
 
     const selectColor = (name) => {
@@ -40,16 +38,6 @@ const Measures = () => {
     return(
         <View style={styles.container}>
             <View style={styles.infoContainer}>
-                <View style={styles.buttonInfoContainer}>
-                    <View style={styles.buttonBig} key={4}>
-                        <Button
-                            key={4}
-                            title="Instructions"
-                            onPress={()=> this.handlePress("Instructions")}
-                            color="#EFEFEF"
-                        /> 
-                    </View>
-                </View>
                 <View style={styles.buttonsContainer}>
                     {steps.map(({name}, i) => {
                         return (   
@@ -63,6 +51,16 @@ const Measures = () => {
                             </View>     
                         );
                     })}
+                </View>
+                <View style={styles.buttonInfoContainer}>
+                    <View style={styles.buttonBig} key={4}>
+                        <Button
+                            key={4}
+                            title="Instructions"
+                            onPress={()=> this.handlePress("Instructions")}
+                            color="#EFEFEF"
+                        /> 
+                    </View>
                 </View>
             </View>
             <View style={styles.wellsContainer}>
@@ -149,7 +147,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',  
         alignItems: 'center',
         width: windowWidth - 50,
-        height: windowHeight - 230 - 70,
+        height: windowHeight - 300,
         backgroundColor: '#FFF8F8',
         borderRadius: 10
     },
@@ -161,13 +159,13 @@ const styles = StyleSheet.create({
         height: 70,
         backgroundColor: 'white',
 
-        paddingLeft: 10
+        paddingLeft: 20
 
     },
     buttons:{
-        width: windowWidth/2 - 30,
+        width: (windowWidth - 35)/2,
         height: 40,
-        paddingRight: 10
+        paddingRight: 20
 
     },
 });
