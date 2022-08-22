@@ -14,10 +14,10 @@ const Header = (props) => {
     return(
       <View style = {styles.container}>
         <View style = {styles.logoContainer}>
-          <Text style = {{fontSize: 35, fontWeight: '700', color: '#F7B4B4'}}>R</Text>
-          <Text style = {{fontSize: 35, fontWeight: '700', color: '#C8F6C1'}}>G</Text>
-          <Text style = {{fontSize: 35, fontWeight: '700', color: '#ACECEC'}}>B</Text>
-          <Text style = {{fontSize: 35, fontWeight: '700', color: '#ECECEC', marginLeft: 10}}>Device</Text>
+          <Text style = {{fontSize: 65, fontWeight: '700', color: '#F7B4B4'}}>R</Text>
+          <Text style = {{fontSize: 65, fontWeight: '700', color: '#C8F6C1'}}>G</Text>
+          <Text style = {{fontSize: 65, fontWeight: '700', color: '#ACECEC'}}>B</Text>
+          <Text style = {{fontSize: 65, fontWeight: '700', color: '#ECECEC', marginLeft: 10}}>Device</Text>
         </View>
       </View>
     )
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',  
     alignItems: 'center',
-    width: windowWidth,
-    height: 80,
+    width: '100%',
+    height: (windowHeight/7),
     backgroundColor: 'white',
   },
   logoContainer: {
@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',  
     alignItems: 'center',
     width: windowWidth,
-    height: 80,
+    height: '100%',
     backgroundColor: 'white',
-    marginBottom: 5
+
   },
 });
 

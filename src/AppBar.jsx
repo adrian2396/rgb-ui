@@ -36,16 +36,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',  
     alignItems: 'center',
     width: windowWidth,
-    height: 40,
+    height: (windowHeight/7)/2,
     backgroundColor: 'white',
-    paddingLeft: 25,
-    paddingRight: 25
+    paddingLeft: '5%',
+    paddingRight: '5%'
   },
   navLinksContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',  
     alignItems: 'flex-start',
-    width: windowWidth - 50,
+    width: 'auto',
     height: 40,
     backgroundColor: '#ECECEC',
     borderRadius: 10,
